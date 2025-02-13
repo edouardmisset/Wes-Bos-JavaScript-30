@@ -1,0 +1,51 @@
+html {
+  --dark: #333;
+  --light: #eee;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--light);
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+
+  block-size: 100%;
+  inline-size: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  font-family: sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+  }
+}
+
+.links {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.links a {
+  padding: 10px 20px;
+  background-color: hsl(211, 100%, 50%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.links a:hover {
+  background-color: hsl(211, 100%, 35%);
+}
