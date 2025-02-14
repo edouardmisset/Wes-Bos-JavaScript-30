@@ -50,7 +50,7 @@
     projects.forEach((project, i) => {
       const link = document.createElement('a')
       link.href = `${project}/index.html`
-      link.textContent = project
+      link.textContent = project.split('-')[1]
       linksContainer.appendChild(link)
     })
   </script>

@@ -8,6 +8,8 @@ the course by Wes Bos. The course can be found at
 
 ## Table of Contents
 
+The [main page](./index.html) for the project.
+
 - [x] **Day 1**: JavaScript Drum Kit
 - [ ] **Day 2**: JS and CSS Clock
 - [x] **Day 3**: CSS Variables
