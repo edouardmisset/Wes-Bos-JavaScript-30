@@ -16,7 +16,7 @@ The [main page](./index.html) for the project.
 - [x] **Day 4**: Array Cardio Day 1
 - [ ] **Day 5**: Flex Panel Gallery
 - [ ] **Day 6**: Type Ahead
-- [ ] **Day 7**: Array Cardio Day 2
+- [x] **Day 7**: Array Cardio Day 2
 - [ ] **Day 8**: Fun with HTML5 Canvas
 - [ ] **Day 9**: Dev Tools Domination
 - [ ] **Day 10**: Hold Shift to Check Multiple Checkboxes
