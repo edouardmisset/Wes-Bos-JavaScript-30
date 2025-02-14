@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scoped CSS Variables and JS</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <title>Scoped CSS Variables and JS</title>
-</head>
+  <body>
+    <h2>Update CSS Variables with <span class="hl">JS</span></h2>
 
-<body>
-  <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+    <div class="controls">
+      <label for="spacing">Frame:</label>
+      <input
+        id="spacing"
+        type="range"
+        name="spacing"
+        min="0"
+        max="100"
+        value="10"
+        data-sizing="px"
+      />
 
-  <div class="controls">
-    <label for="spacing">Frame:</label>
-    <input id="spacing" type="range" name="spacing" min="0" max="100" value="10" data-sizing="px" />
+      <label for="blur">Blur:</label>
+      <input
+        id="blur"
+        type="range"
+        name="blur"
+        min="0"
+        max="10"
+        value="0"
+        data-sizing="px"
+      />
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="10" value="0" data-sizing="px" />
+      <label for="color">Base Color</label>
+      <input id="color" type="color" name="color" value="#ffc600" />
+    </div>
 
-    <label for="color">Base Color</label>
-    <input id="color" type="color" name="color" value="#ffc600" />
-  </div>
+    <img src="./jordan-wozniak-unsplash.jpg" />
 
-  <img src="./jordan-wozniak-unsplash.jpg" />
+    <style>
+      /*
+        misc styles, nothing to do with CSS variables
+      */
 
-  <style>
-    /*
-      misc styles, nothing to do with CSS variables
-    */
-
-    html {
-      --color: #ffc600;
-      --spacing: 10px;
-      --blur: 0px;
-    }
-
-    body {
-      text-align: center;
-      background: #193549;
-      color: white;
-      font-family: 'helvetica neue', sans-serif;
-      font-weight: 100;
-      font-size: 50px;
-    }
-
-    .controls {
-      margin-bottom: 50px;
-    }
-
-    input {
-      width: 100px;
-    }
-
-    img {
-      border-style: solid;
-      border-color: var(--color);
-      border-width: var(--spacing);
-      filter: blur(var(--blur));
-      /* image to scale down if it has to, but never scale up to be larger than its original size */
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
-
-  <script>
-    const inputs = document.querySelectorAll('input').forEach(input => {
-      const handleEvent = event => {
-        const { value, dataset } = event.target
-        const suffix = dataset.sizing || ''
-        const fullValue = value + suffix
-
-        document.documentElement.style.setProperty(
-          `--${input.name}`,
-          fullValue,
-        )
+      html {
+        --color: #ffc600;
+        --spacing: 10px;
+        --blur: 0px;
       }
-      input.addEventListener('change', handleEvent)
-      input.addEventListener('input', handleEvent)
-    })
-  </script>
-</body>
 
+      body {
+        text-align: center;
+        background: #193549;
+        color: white;
+        font-family: "helvetica neue", sans-serif;
+        font-weight: 100;
+        font-size: 50px;
+      }
+
+      .controls {
+        margin-bottom: 50px;
+      }
+
+      input {
+        width: 100px;
+      }
+
+      img {
+        border-style: solid;
+        border-color: var(--color);
+        border-width: var(--spacing);
+        filter: blur(var(--blur));
+        /* image to scale down if it has to, but never scale up to be larger than its original size */
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+
+    <script>
+      const inputs = document.querySelectorAll("input").forEach(
+        (input) => {
+          const handleEvent = (event) => {
+            const { value, dataset } = event.target;
+            const suffix = dataset.sizing || "";
+            const fullValue = value + suffix;
+
+            document.documentElement.style.setProperty(
+              `--${input.name}`,
+              fullValue,
+            );
+          };
+          input.addEventListener("change", handleEvent);
+          input.addEventListener("input", handleEvent);
+        },
+      );
+    </script>
+  </body>
 </html>

@@ -8,7 +8,8 @@ the course by Wes Bos. The course can be found at
 
 ## Table of Contents
 
-The [main page](./index.html) for the project.
+The [main page](https://edouardmisset.github.io/Wes-Bos-JavaScript-30/) for the
+project.
 
 - [x] **Day 1**: JavaScript Drum Kit
 - [ ] **Day 2**: JS and CSS Clock
@@ -39,4 +40,4 @@ The [main page](./index.html) for the project.
 - [ ] **Day 27**: Click and Drag
 - [ ] **Day 28**: Video Speed Controller
 - [ ] **Day 29**: Countdown Timer
-- [ ] **Day 30**: Whack A Mole  
+- [ ] **Day 30**: Whack A Mole
